@@ -44,7 +44,7 @@ def bluescreen(main_filename, back_filename):
             else:
                 out.putpixel((x, y), (r, g, b))
 
-    out.save("output.png")
+    out.save("bluescreen.png")
 
 
     # See if this pixel is "sufficiently" blue
@@ -67,9 +67,10 @@ def main():
     original_leaves = SimpleImage('images/2.png')
     original_leaves.show()
 
-    stop_leaves_replaced = bluescreen('images/11.png', 'images/2.png')
-    stop_leaves_replaced.show()
+    new_img = bluescreen('images/11.png', 'images/2.png')
+    new_img.show()
 
 
+   
 if __name__ == '__main__':
     main()

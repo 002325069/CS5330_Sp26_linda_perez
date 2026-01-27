@@ -7,7 +7,7 @@ manipulate an image to show how the SimpleImage library works.
 
 
 from simpleimage import SimpleImage
-
+from PIL import Image
 
 def darker(image):
     """
@@ -89,27 +89,10 @@ def main(args):
         return
     path_image = str(args[1])  # allows spaces if you quote or pass multiple words
 
-    flower = SimpleImage(path_image)
-    flower.show()
-    
-    #flower = SimpleImage('images/flower.png')
-    #flower.show()
+    img = grayscale(path_image)
+    img.save("grascale_image.png")
+    img.show()
 
-    #darker(flower)
-    #flower.show()
-
-
-    #red_flower = red_channel('images/flower.png')
-    #red_flower.show()
-
-
-    #right_half_darker_flower = right_half_darker('images/flower.png')
-    #right_half_darker_flower.show()
-
-
-    grayscale_flower_avg = grayscale(path_image)
-    grayscale_flower_avg.show()
-
-
+ 
 if __name__ == "__main__":
     main(sys.argv)
